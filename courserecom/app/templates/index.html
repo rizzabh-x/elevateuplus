@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="loader-overlay" id="loader-overlay" style="display: none">
+    <div class="loader">
+        <div id="first">
+            <div id="second">
+                <div id="third">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container py-4 py-xl-5">
+        <div class="row gy-4 gy-md-0">
+            <div class="col-md-6 d-md-flex align-items-md-center">
+                <div style="max-width: 450px;">
+                    <p class="fw-bold text-success mb-2"><strong>ElevateU.ai</strong></p>
+                    <h2 class="text-uppercase fw-bold" style="text-align: left;"><strong>Chart Your Ideal Academic Journey</strong></h2>
+                    <p class="my-3" style="text-align: justify;">ElevateU.ai+ uses smart algorithms to recommend courses tailored just for you. With ElevateU.ai+, discover new passions and unlock your learning potential as we open doors to the ideal courses for you!</p>
+                    <a class="btn btn-primary btn-lg me-2" role="button" href="#mlTextArea">ML</a>
+                    <a class="btn btn-outline-primary btn-lg" role="button" href="#chatGptTextArea">ChatGPT</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-xl-5 m-xl-5"><img class="img-fluid shadow-none w-100 fit-cover" style="min-height: 300px;border-style: none;" src="{{ url_for('static', filename='img/programming.svg') }}"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style="min-height: 400px;">
+                <p>Discover your perfect courses with our custom <strong>Machine Learning</strong> model - trained on Coursera's vast catalog to match you with tailored recommendations.</p>
+                <form id="mlForm" method="post" action="{{ url_for('task.recommend') }}">
+                    <textarea id="mlTextArea" name="prompt" class="bg-light-subtle" style="border-style: dashed;border-color: var(--bs-link-color);border-radius: 10px;overflow: auto;width: 100%;height: 200px;padding: 10px;" placeholder="Start typing your interests here..." required></textarea>
+                    <button id="mlSubmitBtn" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <p>Chat with our AI to get incredibly customized course suggestions - we leverage <strong>ChatGPT </strong>to understand your goals and recommend the ideal classes.</p>
+                <form id="gptForm" method="post" action="{{ url_for('task.gpt') }}">
+                    <textarea id="chatGptTextArea" name="prompt" class="bg-light-subtle" style="border-style: dashed;border-color: var(--bs-link-color);border-radius: 10px;overflow: auto;width: 100%;height: 200px;padding: 10px;" placeholder="Start typing your question here..." required></textarea>
+                    <button id="chatGptSubmitBtn" class="btn btn-primary">Submit</button>
+                </form>
+            </div>            
+        </div>
+    </div>       
+</section>
+{% endblock %}
