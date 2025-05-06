@@ -94,7 +94,7 @@ Contributions are welcome! Feel free to submit issues or pull requests.
 This project is licensed under the MIT License.
 
 ## 📧 Contact
-For any queries, reach out to [your email or LinkedIn profile].
+For any queries, reach out to hardiksharma08300@gmail.com.
 
 ---
 **Star ⭐ this repository if you find it useful!**
